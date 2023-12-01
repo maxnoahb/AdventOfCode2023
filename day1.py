@@ -27,12 +27,17 @@ def solve_part1():
 
 def solve_part2():
     string_list = read_file_to_list("day1_input.txt")
+    # convert digits to words, e.g. 1 to "one"
     digits = [num2words(i) for i in list(range(1, 10))]
     digits.append("\d")
+    # create full regex: digits and spelled-out digits, with a positive lookahead
+    # to account for overlapping matches (e.g. "eighthree")
     combined_regex = "(?=(" + ")|(".join(digits) + "))"
     sum = 0
     for s in string_list:
+        # re.findall returns a tuple for multiple patterns; un-tuple it
         matches = ["".join(i) for i in re.findall(combined_regex, s)]
+        # convert words back to digits
         matches = [str(w2n.word_to_num(i)) for i in matches]
         value = matches[0] + matches[-1]
         sum += int(value)
