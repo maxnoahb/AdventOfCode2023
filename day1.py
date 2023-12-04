@@ -20,13 +20,13 @@ def sum_values(string_list, regex_pattern):
 
 
 def solve_part1():
-    string_list = read_file_to_list("day1_input.txt")
+    string_list = read_file_to_list("inputs/day1_input.txt")
     sum = sum_values(string_list, "\d")
     print(sum)
 
 
 def solve_part2():
-    string_list = read_file_to_list("day1_input.txt")
+    string_list = read_file_to_list("inputs/day1_input.txt")
     # convert digits to words, e.g. 1 to "one"
     digits = [num2words(i) for i in list(range(1, 10))]
     digits.append("\d")

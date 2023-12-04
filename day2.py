@@ -23,7 +23,7 @@ def parse_input():
             }
         }
     """
-    with open("day2_input.txt", "r") as f:
+    with open("inputs/day2_input.txt", "r") as f:
         input_list = f.read().splitlines()
     input_dict = {}
     count = 1
